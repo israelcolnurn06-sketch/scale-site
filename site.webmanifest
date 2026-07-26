@@ -1,0 +1,13 @@
+{
+  "name": "Iscale",
+  "short_name": "Iscale",
+  "description": "Iscale is a marketing agency running Meta Ads, business websites, and growth systems for ambitious brands.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F6F4",
+  "theme_color": "#171A22",
+  "icons": [
+    { "src": "/assets/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,99 @@
+/*
+  Design tokens for Iscale.
+  Colors in OKLCH (perceptually even). Never pure #000/#fff: canvas and
+  "paper" are both slightly off-white, ink is a tinted near-black, not flat black.
+*/
+
+:root {
+  /* ---- Canvas / surfaces ---- */
+  --canvas: oklch(0.985 0.003 260);
+  --canvas-alt: oklch(0.965 0.006 260);
+  --paper: oklch(0.97 0.004 260);
+  --dark: oklch(0.19 0.02 260);
+  --dark-alt: oklch(0.16 0.018 260);
+  --dark-line: oklch(0.32 0.02 260);
+
+  /* ---- Ink / text ---- */
+  --ink: oklch(0.22 0.02 260);
+  --ink-soft: oklch(0.34 0.018 260);
+  --muted: oklch(0.48 0.016 260);
+  --muted-2: oklch(0.62 0.014 260);
+  --on-dark: oklch(0.96 0.004 260);
+  --on-dark-muted: oklch(0.72 0.02 260);
+
+  /* Fixed (non-adaptive): for surfaces that are always dark or always
+     light regardless of system light/dark mode, e.g. the Ultimate Package
+     card. Never redefined in the dark-mode media query below. */
+  --fixed-ink: oklch(0.2 0.02 260);
+
+  /* ---- Brand accent (deep coral-red, AA-safe on white and on dark) ---- */
+  --accent: oklch(0.47 0.17 27);
+  --accent-hover: oklch(0.42 0.17 27);
+  --accent-soft: oklch(0.95 0.028 27);
+  --accent-soft-line: oklch(0.85 0.06 27);
+
+  /* ---- Lines / borders ---- */
+  --line: oklch(0.9 0.006 260);
+  --line-soft: oklch(0.94 0.004 260);
+
+  /* ---- Focus ---- */
+  --ring: oklch(0.47 0.17 27 / 0.45);
+
+  /* ---- Radius ---- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* ---- Spacing (4pt base) ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-24: 96px;
+  --sp-32: 128px;
+
+  /* ---- Type ---- */
+  --font-display: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body: 'Work Sans', system-ui, -apple-system, sans-serif;
+
+  --text-xs: 0.8125rem;   /* 13px */
+  --text-sm: 0.9375rem;   /* 15px */
+  --text-base: 1.0625rem; /* 17px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 2.125rem;   /* 34px */
+  --text-3xl: clamp(2.5rem, 3vw + 1.6rem, 3.5rem);
+  --text-display: clamp(2.75rem, 4vw + 1.6rem, 4.75rem);
+
+  --measure: 62ch;
+
+  /* ---- Motion ---- */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-mid: 260ms;
+  --dur-entrance: 640ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: oklch(0.17 0.018 260);
+    --canvas-alt: oklch(0.20 0.02 260);
+    --paper: oklch(0.22 0.02 260);
+    --ink: oklch(0.94 0.006 260);
+    --ink-soft: oklch(0.84 0.01 260);
+    --muted: oklch(0.68 0.014 260);
+    --muted-2: oklch(0.55 0.012 260);
+    --line: oklch(0.32 0.016 260);
+    --line-soft: oklch(0.27 0.014 260);
+    --dark: oklch(0.1 0.014 260);
+    --dark-alt: oklch(0.08 0.012 260);
+  }
+}
