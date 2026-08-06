@@ -375,7 +375,8 @@ strong.accent { color: var(--accent); font-weight: 700; font-style: normal; }
 .price-card--dark .price .amount { color: var(--on-dark); }
 .price-card--dark .price .term { color: var(--on-dark-muted); }
 .price-card--dark p { color: var(--on-dark-muted); }
-.price-card--dark .check { color: var(--accent); }
+.price-card--dark .feature-list li { color: var(--on-dark-muted); }
+.price-card--dark .check-icon { color: var(--accent); }
 
 .pill-badge {
   position: absolute;
