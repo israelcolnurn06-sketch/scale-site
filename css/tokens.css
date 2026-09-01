@@ -1,49 +1,49 @@
 /*
-  Design tokens for Iscale.
-  Colors in OKLCH (perceptually even). Never pure #000/#fff: canvas and
-  "paper" are both slightly off-white, ink is a tinted near-black, not flat black.
+  Design tokens for Iscale — dark/futuristic theme, matched to the AI
+  Growth Funnel pitch one-pager so the site and the sales collateral read
+  as the same product. Palette values below are the pitch deck's exact
+  hex/rgba, not re-derived approximations, so the match is exact rather
+  than close. Everything else (spacing, radius, motion) stays OKLCH-driven
+  where it doesn't need to match the deck precisely.
 */
 
 :root {
-  /* ---- Canvas / surfaces ---- */
-  --canvas: oklch(0.985 0.003 260);
-  --canvas-alt: oklch(0.965 0.006 260);
-  --paper: oklch(0.97 0.004 260);
-  --dark: oklch(0.19 0.02 260);
-  --dark-alt: oklch(0.16 0.018 260);
-  --dark-line: oklch(0.32 0.02 260);
+  /* ---- Canvas / surfaces (dark-first) ---- */
+  --canvas: #090b10;
+  --canvas-alt: #0c0f16;
+  --paper: #10131b;        /* elevated surface: cards, nav */
+  --paper-hover: #151926;
+  --dark: #04070c;         /* deeper-than-canvas, for high-emphasis panels */
+  --dark-alt: #030509;
+  --dark-line: #1e2330;
 
   /* ---- Ink / text ---- */
-  --ink: oklch(0.22 0.02 260);
-  --ink-soft: oklch(0.34 0.018 260);
-  --muted: oklch(0.48 0.016 260);
-  --muted-2: oklch(0.62 0.014 260);
-  --on-dark: oklch(0.96 0.004 260);
-  --on-dark-muted: oklch(0.72 0.02 260);
+  --ink: #e8ecf5;
+  --ink-soft: #9aa4bb;
+  --muted: #626c82;
+  --muted-2: #4a5264;
+  --on-dark: #e8ecf5;      /* kept as an alias: the whole site is "on dark" now */
+  --on-dark-muted: #9aa4bb;
+  --fixed-ink: #04191f;    /* dark text for use on a bright accent surface */
 
-  /* Fixed (non-adaptive): for surfaces that are always dark or always
-     light regardless of system light/dark mode, e.g. the Ultimate Package
-     card. Never redefined in the dark-mode media query below. */
-  --fixed-ink: oklch(0.2 0.02 260);
+  /* ---- Brand accent (cyan, matched to the pitch deck) ---- */
+  --accent: #22d3ee;
+  --accent-hover: #67e8f9;
+  --accent-soft: rgba(34, 211, 238, 0.12);
+  --accent-soft-line: rgba(34, 211, 238, 0.4);
 
-  /* ---- Brand accent (deep coral-red, AA-safe on white and on dark) ---- */
-  --accent: oklch(0.47 0.17 27);
-  --accent-hover: oklch(0.42 0.17 27);
-  --accent-soft: oklch(0.95 0.028 27);
-  --accent-soft-line: oklch(0.85 0.06 27);
-
-  /* ---- Systems accent (live/status indicators only — never competes
-     with --accent as a second "brand" color, used sparingly for dots,
-     tickers, and "answered" states) ---- */
-  --live: oklch(0.6 0.16 152);
-  --live-soft: oklch(0.94 0.03 152);
+  /* ---- Secondary accent (amber, for stat/emphasis blocks — matches the
+     deck's --warn, used sparingly so it doesn't compete with cyan) ---- */
+  --warn: #fbbf24;
+  --warn-soft: rgba(251, 191, 36, 0.12);
+  --warn-line: rgba(251, 191, 36, 0.4);
 
   /* ---- Lines / borders ---- */
-  --line: oklch(0.9 0.006 260);
-  --line-soft: oklch(0.94 0.004 260);
+  --line: #1e2330;
+  --line-soft: rgba(255, 255, 255, 0.06);
 
   /* ---- Focus ---- */
-  --ring: oklch(0.47 0.17 27 / 0.45);
+  --ring: rgba(34, 211, 238, 0.45);
 
   /* ---- Radius ---- */
   --radius-sm: 10px;
@@ -87,20 +87,11 @@
   --dur-fast: 150ms;
   --dur-mid: 260ms;
   --dur-entrance: 640ms;
+
+  /* ---- Shadow (soft glow on dark, matched to the pitch deck) ---- */
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --canvas: oklch(0.17 0.018 260);
-    --canvas-alt: oklch(0.20 0.02 260);
-    --paper: oklch(0.22 0.02 260);
-    --ink: oklch(0.94 0.006 260);
-    --ink-soft: oklch(0.84 0.01 260);
-    --muted: oklch(0.68 0.014 260);
-    --muted-2: oklch(0.55 0.012 260);
-    --line: oklch(0.32 0.016 260);
-    --line-soft: oklch(0.27 0.014 260);
-    --dark: oklch(0.1 0.014 260);
-    --dark-alt: oklch(0.08 0.012 260);
-  }
-}
+/* This site is deliberately dark-only now (matches the sales deck, which
+   is also fixed-dark) — no @media (prefers-color-scheme) override. A
+   single committed look, not a light/dark toggle. */
