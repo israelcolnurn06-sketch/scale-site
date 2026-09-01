@@ -550,6 +550,130 @@ strong.accent { color: var(--accent); font-weight: 700; font-style: normal; }
 .form-status { font-size: var(--text-sm); margin-top: var(--sp-4); display: none; }
 .form-status.is-visible { display: block; }
 
+/* ---------- Live activity ticker (signature element) ----------
+   A simulated feed of calls being answered in real time — makes the core
+   pitch ("every call answered instantly") a felt property of the site
+   itself, not just a sentence. Pure CSS marquee, no JS, respects
+   reduced-motion by pausing rather than hiding (the content itself is
+   still informative even static). */
+.ticker {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  overflow: hidden;
+  position: relative;
+}
+.ticker::before, .ticker::after {
+  content: "";
+  position: absolute; top: 0; bottom: 0; width: 48px; z-index: 2;
+  pointer-events: none;
+}
+.ticker::before { left: 0; background: linear-gradient(to right, var(--paper), transparent); }
+.ticker::after { right: 0; background: linear-gradient(to left, var(--paper), transparent); }
+.ticker-head {
+  display: flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-6) 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.ticker-live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--live);
+  position: relative;
+  flex: none;
+}
+.ticker-live-dot::after {
+  content: "";
+  position: absolute; inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--live);
+  animation: pulse-ring 2.2s var(--ease-out-quart) infinite;
+}
+@media (prefers-reduced-motion: reduce) { .ticker-live-dot::after { animation: none; opacity: 0.5; } }
+
+.ticker-track {
+  display: flex;
+  gap: var(--sp-8);
+  padding: var(--sp-4) var(--sp-6);
+  width: max-content;
+  animation: ticker-scroll 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation-play-state: paused; } }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: flex; align-items: baseline; gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+.ticker-item .t-time { color: var(--muted-2); }
+.ticker-item .t-answered { color: var(--live); font-weight: 600; }
+.ticker-item .t-biz { color: var(--ink); }
+
+/* ---------- Monospace stat labels (data/technical type layer) ---------- */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+@media (max-width: 720px) { .stat-strip { grid-template-columns: 1fr; } }
+.stat-block {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  padding: var(--sp-6);
+}
+.stat-block .num {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--ink);
+  display: block;
+}
+.stat-block .cap { font-size: var(--text-sm); color: var(--muted); margin-top: 4px; }
+
+/* ---------- Included-item list (numbered, monospace marks) ---------- */
+.included-list { display: grid; gap: 2px; }
+.included-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--sp-4);
+  align-items: baseline;
+  padding-block: var(--sp-4);
+  border-bottom: 1px solid var(--line-soft);
+}
+.included-item:last-child { border-bottom: none; }
+.included-item .mark { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--accent); font-weight: 600; }
+.included-item h4 { margin-bottom: 4px; }
+.included-item p { color: var(--ink-soft); margin-bottom: 0; }
+
+/* ---------- Tier tag (pricing cards) ---------- */
+.tier-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--sp-4);
+  width: fit-content;
+}
+
 /* ---------- Misc content pages ---------- */
 .legal h2 { margin-top: var(--sp-12); }
 .legal p, .legal li { color: var(--ink-soft); }

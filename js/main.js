@@ -173,7 +173,7 @@
 
         var payload = {
           access_key: accessKey,
-          subject: 'Strategy call request: ' + name + ', ' + dateStr + ' at ' + selectedTime,
+          subject: 'Call request: ' + name + ', ' + dateStr + ' at ' + selectedTime,
           from_name: name,
           email: email,
           requested_date: dateStr,

@@ -32,6 +32,12 @@
   --accent-soft: oklch(0.95 0.028 27);
   --accent-soft-line: oklch(0.85 0.06 27);
 
+  /* ---- Systems accent (live/status indicators only — never competes
+     with --accent as a second "brand" color, used sparingly for dots,
+     tickers, and "answered" states) ---- */
+  --live: oklch(0.6 0.16 152);
+  --live-soft: oklch(0.94 0.03 152);
+
   /* ---- Lines / borders ---- */
   --line: oklch(0.9 0.006 260);
   --line-soft: oklch(0.94 0.004 260);
@@ -62,6 +68,7 @@
   --font-display: 'Sora', system-ui, -apple-system, sans-serif;
   --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-body: 'Work Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --text-xs: 0.8125rem;   /* 13px */
   --text-sm: 0.9375rem;   /* 15px */
