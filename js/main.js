@@ -158,7 +158,7 @@
     renderTimes();
     updateSummary();
 
-    var form = calRoot.querySelector('[data-booking-form]');
+    var form = calRoot.matches('[data-booking-form]') ? calRoot : calRoot.querySelector('[data-booking-form]');
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
