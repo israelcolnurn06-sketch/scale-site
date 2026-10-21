@@ -10,6 +10,9 @@
 /css/*
   Cache-Control: public, max-age=300, must-revalidate
 
+/home/*
+  Cache-Control: public, max-age=300, must-revalidate
+
 /js/*
   Cache-Control: public, max-age=300, must-revalidate
 
