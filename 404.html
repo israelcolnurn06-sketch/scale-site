@@ -1,38 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found | Iscale</title>
-<meta name="robots" content="noindex">
-<link rel="icon" href="/favicon.ico?v=2" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=2">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=2">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=2">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="css/tokens.css">
-<link rel="stylesheet" href="css/site.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | iScale Marketing</title>
+  <meta name="description" content="That page moved, or never existed.">
+  <meta name="theme-color" content="#0C0A1E">
+  <link rel="canonical" href="https://www.iscalemktg.com/404">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="iScale Marketing">
+  <meta property="og:url" content="https://www.iscalemktg.com/404">
+  <meta property="og:title" content="Page Not Found | iScale Marketing">
+  <meta property="og:description" content="That page moved, or never existed.">
+  <meta property="og:image" content="https://www.iscalemktg.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Hanken+Grotesk:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home/styles.css?v=16">
+  <link rel="stylesheet" href="home/pages.css?v=3">
 </head>
 <body>
-<div class="nav-shell">
-  <nav class="nav" aria-label="Primary">
-    <a class="nav-logo" href="/">Iscale<span>.</span></a>
-    <span></span>
-    <a class="btn btn-primary" href="/">Back Home →</a>
-  </nav>
-</div>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><i data-progress></i></div>
 
-<main id="main">
-  <section class="wrap" style="padding-block: var(--sp-32); text-align: center;">
-    <div class="eyebrow">404</div>
-    <h1>That page moved, or never existed.</h1>
-    <p class="lede" style="max-width: 48ch; margin-inline: auto;">Head back home, or jump straight to what you were probably looking for.</p>
-    <div style="display:flex; gap: var(--sp-4); justify-content: center; margin-top: var(--sp-8); flex-wrap: wrap;">
-      <a class="btn btn-primary" href="/">Home</a>
-      <a class="btn btn-ghost" href="pricing.html">Pricing</a>
-      <a class="btn btn-ghost" href="https://cal.com/israel-colburn-y2vr3o/iscale-intro-call" target="_blank" rel="noopener">Book a Call</a>
-    </div>
-  </section>
-</main>
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="#top" aria-label="iScale Marketing, home"><span class="nav__dot" aria-hidden="true"></span>iScale</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="index.html#system">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="nav__cta" href="contact.html">Book a call<span aria-hidden="true">&nbsp;&rarr;</span></a>
+  </header>
+
+  <main id="main">
+    <section class="phero phero--full">
+      <canvas class="field" data-field aria-hidden="true"></canvas>
+      <div class="phero__in">
+        <p class="label">404</p>
+        <h1 class="display phero__title">That page moved,<br>or <em>never existed.</em></h1>
+        <p class="phero__lede">Head back home, or jump straight to what you were probably looking for.</p>
+        <div class="phero__actions"><a class="btn btn--copper btn--lg" href="index.html">Home</a><a class="btn btn--line btn--lg" href="pricing.html">Pricing</a><a class="btn btn--line btn--lg" href="contact.html">Book a call</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__brand"><span class="nav__dot" aria-hidden="true"></span>iScale Marketing</div>
+    <p class="foot__line">Websites, ad management and AI voice systems for local service businesses.</p>
+    <nav class="foot__links" aria-label="Footer">
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://cal.com/israel-colburn-y2vr3o/iscale-intro-call" target="_blank" rel="noopener">Book a call</a>
+    </nav>
+    <p class="foot__copy mono">&copy; <span data-year>2026</span> iScale Marketing &middot; <a href="mailto:iscalemarketing@gmail.com">iscalemarketing@gmail.com</a></p>
+  </footer>
+
+  <script src="home/main.js?v=5" defer></script>
 </body>
 </html>

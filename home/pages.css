@@ -1,0 +1,102 @@
+/* Inner pages (pricing, about, contact, legal, 404). Loaded after home/styles.css, so it reuses its palette and type. */
+
+.phero { position: relative; isolation: isolate; overflow: clip; padding: clamp(150px, 22vh, 230px) var(--gutter) clamp(64px, 9vh, 110px); }
+.phero--full { min-height: 100svh; display: grid; align-items: center; padding-bottom: clamp(64px, 9vh, 110px); }
+.phero__in { max-width: 1400px; margin: 0 auto; }
+.phero__title { font-size: clamp(2.6rem, 6.6vw, 6rem); max-width: 16ch; margin-bottom: 1.6rem; }
+.phero__lede { max-width: 52ch; color: var(--bone-3); font-weight: 300; font-size: 1.125rem; }
+.phero__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+
+/* Pricing page: the homepage pricing block, minus its own header */
+.pricing--page { border-top: 0; padding-top: clamp(24px, 4vh, 48px); }
+.pricing--page .pricing__group:first-child { margin-top: 0; }
+
+/* FAQ band */
+.faq-band { padding: clamp(80px, 11vh, 150px) var(--gutter); background: var(--ink); border-top: 1px solid var(--ink-line); }
+.faq-band__in { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+.faq details { border-top: 1px solid var(--ink-line); } .faq details:last-child { border-bottom: 1px solid var(--ink-line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 64px; padding: .8rem 0; font-family: var(--serif); font-size: 1.35rem; font-weight: 300; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; flex: none; width: 30px; height: 30px; border: 1px solid var(--ink-line); border-radius: 50%; background-image: linear-gradient(var(--copper), var(--copper)), linear-gradient(var(--copper), var(--copper)); background-size: 10px 1.5px, 1.5px 10px; background-position: center; background-repeat: no-repeat; }
+.faq details[open] summary::after { background-size: 10px 1.5px, 0 0; }
+.faq summary:hover { color: var(--copper-2); }
+.faq details p { color: var(--bone-3); padding-bottom: 1.3rem; max-width: 60ch; font-weight: 300; }
+
+/* About */
+.about { background: var(--bone); color: var(--ink); padding: clamp(80px, 11vh, 150px) var(--gutter); }
+.about__in { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 120px); }
+.about .label { color: var(--copper-deep); }
+.about h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(2rem, 3.6vw, 3.2rem); line-height: 1.02; letter-spacing: -.015em; margin-bottom: 1.4rem; text-wrap: balance; }
+.about h2 em { color: var(--copper-deep); font-style: italic; }
+.about p:not(.label) { color: #3A3548; margin-bottom: 1.1rem; max-width: 52ch; }
+.leader { position: relative; isolation: isolate; overflow: clip; background: var(--ink-2); padding: clamp(80px, 11vh, 150px) var(--gutter); }
+.leader__in { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+.leader__card { border: 1px solid var(--ink-line); background: rgba(243, 238, 226, .03); padding: clamp(24px, 3.4vw, 44px); }
+.leader__top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--ink-line); }
+.leader__name { font-family: var(--serif); font-size: 2rem; font-weight: 300; }
+.leader__top .mono { color: var(--copper-2); }
+.leader blockquote { margin: 0; font-family: var(--serif); font-weight: 300; font-size: clamp(1.3rem, 2.1vw, 1.8rem); line-height: 1.35; letter-spacing: -.01em; }
+
+/* CTA band used on inner pages */
+.cta--page { padding: clamp(100px, 16vh, 200px) var(--gutter); }
+.cta--page .cta__title { font-size: clamp(2.8rem, 8vw, 7.5rem); }
+
+/* Contact / booking */
+.book { background: var(--ink); padding: 0 var(--gutter) clamp(80px, 11vh, 140px); }
+.book__in { max-width: 1400px; margin: 0 auto; }
+.booking { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 5vw, 80px); border: 1px solid var(--ink-line); background: var(--ink-2); padding: clamp(24px, 4vw, 56px); }
+.booking__step { color: var(--copper-2); margin-bottom: 1.4rem; }
+.booking__sub { font-family: var(--serif); font-weight: 300; font-size: 1.5rem; margin: 2rem 0 .9rem; }
+.cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-family: var(--serif); font-size: 1.5rem; font-weight: 300; }
+.cal-nav-btn { width: 44px; height: 44px; border: 1px solid var(--ink-line); background: transparent; color: var(--bone); font-size: 1.4rem; line-height: 1; cursor: pointer; border-radius: 2px; transition: border-color .2s, color .2s; }
+.cal-nav-btn:hover { border-color: var(--copper); color: var(--copper-2); }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+.cal-grid .dow { font-family: var(--mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); padding: .5rem 0; }
+.cal-day { min-height: 44px; border: 1px solid transparent; background: transparent; color: var(--bone); font: 400 1rem var(--sans); cursor: pointer; border-radius: 2px; transition: background-color .15s, border-color .15s, color .15s; }
+.cal-day:disabled { color: var(--mute-dark); cursor: default; }
+.cal-day:not(:disabled):hover { border-color: var(--copper); }
+.cal-day[aria-pressed="true"] { background: var(--copper); color: var(--ink); border-color: var(--copper); font-weight: 600; }
+.time-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+.time-slot { min-height: 46px; border: 1px solid var(--ink-line); background: transparent; color: var(--bone); font: 400 .9375rem var(--sans); cursor: pointer; border-radius: 2px; transition: background-color .15s, border-color .15s, color .15s; }
+.time-slot:hover { border-color: var(--copper); }
+.time-slot[aria-pressed="true"] { background: var(--copper); color: var(--ink); border-color: var(--copper); font-weight: 600; }
+/* .field is also the particle-canvas class on the homepage stylesheet; undo that for form fields */
+.booking .field { position: static; inset: auto; width: auto; height: auto; z-index: auto; display: block; pointer-events: auto; margin-bottom: 1.1rem; }
+.booking .field label { display: block; font-weight: 500; font-size: .875rem; margin-bottom: .4rem; color: var(--bone-3); }
+.booking .field input, .booking .field textarea { width: 100%; font: 300 1rem/1.4 var(--sans); color: var(--bone); background: rgba(243, 238, 226, .05); border: 1px solid var(--ink-line); border-radius: 2px; padding: .8rem .95rem; min-height: 50px; transition: border-color .2s, box-shadow .2s; }
+.booking .field textarea { min-height: 110px; resize: vertical; }
+.booking .field input::placeholder, .booking .field textarea::placeholder { color: var(--mute-dark); }
+.booking .field input:focus, .booking .field textarea:focus { outline: none; border-color: var(--copper); box-shadow: 0 0 0 3px rgba(226, 180, 90, .22); }
+.form-note { font-size: .875rem; color: var(--mute); margin-top: .7rem; }
+.form-note strong { color: var(--bone); font-weight: 500; }
+.booking__submit { width: 100%; margin-top: 1rem; }
+.booking__submit:disabled { opacity: .4; cursor: not-allowed; }
+.form-status { display: none; margin-top: 1rem; padding: .9rem 1rem; border: 1px solid var(--copper-deep); background: rgba(226, 180, 90, .08); color: var(--bone); font-size: .9375rem; }
+.form-status.is-visible { display: block; }
+.ask { background: var(--bone); color: var(--ink); padding: clamp(80px, 11vh, 150px) var(--gutter); text-align: center; }
+.ask__in { max-width: 760px; margin: 0 auto; }
+.ask .display em { color: var(--copper-deep); }
+.ask p { color: #3A3548; margin: 1.4rem auto 2rem; max-width: 52ch; }
+.ask__mail { font-family: var(--serif); font-size: clamp(1.4rem, 2.6vw, 2.1rem); color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--copper); padding: .6rem 0; display: inline-block; word-break: break-all; }
+.ask__mail:hover { color: var(--copper-deep); }
+
+/* Legal */
+.prose { background: var(--bone); color: var(--ink); padding: clamp(64px, 9vh, 120px) var(--gutter); }
+.prose__in { max-width: 760px; margin: 0 auto; }
+.prose__date { color: var(--copper-deep); margin-bottom: 2rem; }
+.prose h2 { font-family: var(--serif); font-weight: 400; font-size: 1.8rem; line-height: 1.1; margin: 2.4rem 0 .8rem; }
+.prose p, .prose li { color: #3A3548; margin-bottom: 1rem; }
+.prose ul { padding-left: 1.2rem; list-style: disc; } .prose li::marker { color: var(--copper-deep); }
+.prose a { color: var(--ink); text-decoration-color: var(--copper); text-underline-offset: 3px; display: inline-flex; align-items: center; min-height: 44px; } .prose a:hover { color: var(--copper-deep); }
+.prose__note { margin-top: 2.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(12, 10, 30, .15); font-size: .9375rem; color: #6E6880 !important; }
+
+@media (max-width: 1100px) {
+  .faq-band__in, .about__in, .leader__in, .booking { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .phero { padding-top: 130px; }
+  .phero__title { font-size: clamp(2.5rem, 12vw, 4rem); max-width: none; }
+  .phero__actions .btn { width: 100%; }
+  .time-grid { grid-template-columns: repeat(2, 1fr); }
+  .prose h2 { font-size: 1.5rem; }
+}
