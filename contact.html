@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Hanken+Grotesk:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="home/styles.css?v=16">
+  <link rel="stylesheet" href="home/styles.css?v=19">
   <link rel="stylesheet" href="home/pages.css?v=3">
 </head>
 <body>
@@ -39,7 +39,17 @@
       <a href="contact.html">Contact</a>
     </nav>
     <a class="nav__cta" href="contact.html">Book a call<span aria-hidden="true">&nbsp;&rarr;</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mmenu" data-menu><span></span><span></span><span class="sr">Menu</span></button>
   </header>
+
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="index.html#system">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a class="btn btn--copper" href="contact.html">Book a call</a>
+    <a class="mmenu__mail" href="mailto:iscalemarketing@gmail.com">iscalemarketing@gmail.com</a>
+  </div>
 
   <main id="main">
     <section class="phero">

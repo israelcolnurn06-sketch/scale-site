@@ -139,4 +139,17 @@
       b.addEventListener('pointerleave', function () { b.style.transform = ''; });
     });
   }
+
+  /* ---------- Mobile menu ---------- */
+  var menuBtn = document.querySelector('[data-menu]'), menuEl = document.getElementById('mmenu');
+  if (menuBtn && menuEl) {
+    var closeMenu = function () { menuBtn.setAttribute('aria-expanded', 'false'); menuEl.hidden = true; doc.classList.remove('menu-open'); };
+    menuBtn.addEventListener('click', function () {
+      var open = menuBtn.getAttribute('aria-expanded') !== 'true';
+      menuBtn.setAttribute('aria-expanded', String(open)); menuEl.hidden = !open; doc.classList.toggle('menu-open', open);
+    });
+    menuEl.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 760) closeMenu(); });
+  }
 })();
