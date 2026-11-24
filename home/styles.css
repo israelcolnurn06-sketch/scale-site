@@ -182,10 +182,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .site--feature .site__frame { display: block; }
 .site--feature .site__meta { padding: 0; gap: 1rem; justify-items: start; }
 .site--feature .site__meta .btn { margin-top: 1rem; }
+.checks { display: grid; gap: .6rem; margin-top: auto; padding-top: 1.4rem; border-top: 1px solid var(--ink-line); }
 .site--feature .checks { width: 100%; margin-top: .6rem; }
- display: grid; gap: .55rem; margin-top: auto; padding-top: 1.4rem; border-top: 1px solid var(--ink-line); }
-.checks li { display: flex; gap: .7rem; align-items: baseline; color: var(--bone-3); font-size: .9375rem; }
-.checks li::before { content: ""; width: 10px; height: 6px; flex: none; border-left: 1.5px solid var(--copper); border-bottom: 1.5px solid var(--copper); transform: rotate(-45deg) translateY(-2px); }
+.checks li { position: relative; padding-left: 2.1rem; color: var(--bone-3); font-size: .9375rem; line-height: 1.5; }
+.checks li::before { content: ""; position: absolute; left: 0; top: .28em; width: 14px; height: 14px; background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23E2B45A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 7.5l3 3 6-7'/%3E%3C/svg%3E"); }
 
 /* ---------- 3. The system ---------- */
 .system { position: relative; isolation: isolate; overflow: clip; padding: clamp(100px, 14vh, 190px) var(--gutter); }
