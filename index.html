@@ -28,7 +28,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://www.iscalemktg.com/#business","name":"iScale Marketing","url":"https://www.iscalemktg.com/","email":"iscalemarketing@gmail.com","image":"https://www.iscalemktg.com/assets/og-image.png","description":"Websites, ad management and AI voice systems for local service businesses.","areaServed":{"@type":"Country","name":"United States"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website design"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Meta ad management"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI voice and chat agent"}}]}}
   </script>
-  <link rel="stylesheet" href="home/styles.css?v=19">
+  <link rel="stylesheet" href="home/styles.css?v=21">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -38,6 +38,7 @@
   <header class="nav" data-nav>
     <a class="nav__brand" href="#top" aria-label="iScale Marketing, home"><span class="nav__dot" aria-hidden="true"></span>iScale</a>
     <nav class="nav__links" aria-label="Main">
+      <a href="#work">Work</a>
       <a href="#system">Services</a>
       <a href="pricing.html">Pricing</a>
       <a href="about.html">About</a>
@@ -47,6 +48,7 @@
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mmenu" data-menu><span></span><span></span><span class="sr">Menu</span></button>
   </header>
   <div class="mmenu" id="mmenu" hidden>
+    <a href="#work">Work</a>
     <a href="#system">Services</a>
     <a href="pricing.html">Pricing</a>
     <a href="about.html">About</a>
@@ -80,10 +82,35 @@
           <small>Most inquiries arrive after 6 PM, right after you close.</small>
         </div>
       </div>
-      <a class="hero__scroll" href="#problem" aria-label="Scroll to the next section"><span></span></a>
+      <a class="hero__scroll" href="#work" aria-label="Scroll to the next section"><span></span></a>
     </section>
 
-    <!-- 2. PROBLEM / SOLUTION -->
+    <!-- 2. PORTFOLIO -->
+    <section class="work" id="work">
+      <header class="work__head">
+        <h2 class="display reveal">Our <em>work.</em></h2>
+        <p class="work__lede reveal">Live sites we've built for local businesses. Each one links to the real thing.</p>
+      </header>
+      <article class="site site--feature reveal">
+        <a class="site__frame" href="https://www.brightpathconstructions.com/" target="_blank" rel="noopener" aria-label="Open the BrightPath Construction Corp website">
+          <img class="site__desk" src="assets/img/work-brightpath-desk.webp" width="1200" height="750" alt="BrightPath Construction Corp homepage on a laptop" loading="lazy">
+          <img class="site__phone" src="assets/img/work-brightpath-phone.webp" width="520" height="1125" alt="BrightPath Construction Corp homepage on a phone" loading="lazy">
+        </a>
+        <div class="site__meta">
+          <span class="mono">Construction &middot; NYC &amp; Long Island</span>
+          <h3>BrightPath Construction Corp</h3>
+          <p>Masonry, concrete, roofing, siding, gutters and renovations across the five boroughs, Nassau and Suffolk. A free estimate form on the first screen, tap-to-call in the header, and a Call Now bar that stays pinned on phones.</p>
+          <ul class="checks">
+            <li>Estimate request opens a text to the owner</li>
+            <li>Google review link and social profiles built in</li>
+            <li>Fast, mobile-first, built to be found on Google</li>
+          </ul>
+          <a class="btn btn--line" href="https://www.brightpathconstructions.com/" target="_blank" rel="noopener">Visit the live site<span aria-hidden="true">&nbsp;&rarr;</span></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. PROBLEM / SOLUTION -->
     <section class="problem" id="problem">
       <div class="problem__act problem__act--a">
         <p class="label reveal">The problem</p>
